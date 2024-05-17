@@ -1,0 +1,27 @@
+version: '3.1'
+
+volumes:
+  pg_coffeshop:
+
+services:
+  coffeshop_db:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=pass
+      - POSTGRES_DB=coffeshop_db
+    volumes:
+      - pg_coffeshop:/var/lib/postgresql/date
+    ports:
+      - "127.0.0.1:5432:5432"
+  app:
+    restart: always
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - coffeshop_db
+    environment:
+      SPRING_DATASOURCE_URL: 'jdbc:postgresql://coffee_house_db:5432/coffee_house_db'
+      JAVA_OPTS: '-Xmx512'
