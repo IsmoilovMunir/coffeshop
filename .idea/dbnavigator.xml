@@ -28,9 +28,7 @@
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="e195adaf-4e22-4d33-b9ae-0a7b21497f0d" object-ref="consoles/coffeshop_db@localhost" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="e195adaf-4e22-4d33-b9ae-0a7b21497f0d" />

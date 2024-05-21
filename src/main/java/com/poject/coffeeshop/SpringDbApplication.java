@@ -20,10 +20,10 @@ public class SpringDbApplication implements CommandLineRunner {
     }
     @Override
     public void run(String... args) throws Exception{
-        Product product = new Product(null, "name");
-        repository.save(product);
-        List<Product> all = repository.findAll();
-        System.out.println(all);
+//        Product product = new Product(null, "name");
+//        repository.save(product);
+//        List<Product> all = repository.findAll();
+//        System.out.println(all);
     }
 
 
