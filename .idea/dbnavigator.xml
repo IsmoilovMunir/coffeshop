@@ -21,6 +21,11 @@
   id BIGINT AUTO_INCREMENT NOT NULL,
    name VARCHAR(255) NULL,
    CONSTRAINT pk_product PRIMARY KEY (id)
+);
+CREATE TABLE product (
+  id BIGINT AUTO_INCREMENT NOT NULL,
+   name VARCHAR(255) NULL,
+   CONSTRAINT pk_product PRIMARY KEY (id)
 );]]></console>
     </connection>
   </component>
@@ -28,7 +33,9 @@
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="e195adaf-4e22-4d33-b9ae-0a7b21497f0d" object-ref="consoles/coffeshop_db@localhost" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="e195adaf-4e22-4d33-b9ae-0a7b21497f0d" />
