@@ -1,0 +1,45 @@
+body {
+    height: 100%;
+
+    font-size: 20px;
+    color: #252B42;
+}
+
+nav .nav-item a {
+/*color:#666;*/
+    background-image: linear-gradient(to right, #feffff, #9498a6);
+    background-repeat: no-repeat;
+    background-size: 0 100%;
+    /*border-radius: 4px;*/
+    text-decoration: none;
+    padding: 5px 15px;
+    transition: 0.3s;
+}
+nav .nav-item a:hover {
+    background-size: 100% 100%;
+}
+
+
+
+
+.footer {
+    position: fixed; /* Подвал как приклеенный */
+    bottom: 0; /* Фиксация снизу */
+    left: 0; /* К началу слева */
+    right: 0; /* Без отступов справа */
+    height: 100px; /* Задаем высоту */
+}
+.content {
+    flex: 1 0 auto; /* Позволяем контенту растягиваться */
+}
+.text-secondary{
+    text-align:center;
+}
+.button{
+    background-color: #503E92;
+
+/*    background-color:#FF658A*/
+}
+.button:hover{
+    background-color:#FF658A
+}
