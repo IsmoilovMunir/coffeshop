@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light" th:id="nav">
-  <a class="navbar-brand" href="#">Coffee Snob</a>
+  <a class="navbar-brand" href="#">CoffLib</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -16,12 +16,22 @@
       </div>
       <div sec:authorize="isAuthenticated()">
         <li class="nav-item">
+          <a class="nav-link" href="/menu">Menu</a>
+        </li>
+      </div>
+      <div sec:authorize="isAuthenticated()">
+        <li class="nav-item">
+          <a class="nav-link" href="/category">Categories</a>
+        </li>
+      </div>
+      <div sec:authorize="isAuthenticated()">
+        <li class="nav-item">
           <a class="nav-link" href="/product">Products</a>
         </li>
       </div>
       <div sec:authorize="isAuthenticated()">
         <li class="nav-item">
-          <a class="nav-link" href="/clients">Clients</a>
+          <a class="nav-link" href="/unit">Units</a>
         </li>
       </div>
       <div sec:authorize="hasRole('ROLE_ADMIN')">
@@ -29,6 +39,12 @@
           <a class="nav-link" href="/users">Users</a>
         </li>
       </div>
+
+
+
+
+
+
     </ul>
     <ul class="navbar-nav ml-auto">
       <div sec:authorize="isAuthenticated()">

@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @PreAuthorize("hasRole('ROLE_ADMIN')")
@@ -29,8 +30,13 @@ public class UsersController {
 
 
     @GetMapping
-    public String getUsers(Model model) {
+    public String getUsers(String username , Model model) {
+
+        Optional<User> user = userService.getUserByUsername(username);
+
+
         List<UserDto> users = userService.findAll()
+
                 .stream()
                 .map(UserDto::toDto)
                 .toList();
