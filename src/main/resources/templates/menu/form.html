@@ -12,7 +12,7 @@
         <input type="hidden" th:field="*{id}"/>
 
         <div class="form-group">
-            <label for="product">Product:</label>
+            <label for="product">Products:</label>
             <select id="product" class="form-control" th:field="*{product.id}" required>
                 <option value="" selected>Select Product...</option>
                 <option th:each="product : ${products}" th:value="${product.id}" th:text="${product.name}"></option>
