@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/head "></head>
+<body>
+<!-- Navigation -->
+<div th:replace="fragments/nav :: nav "></div>
+
+<main>
+    <!-- Main Content -->
+    <div class="container-flex container mt-4">
+        <h1>Products</h1>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Category</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="product : ${products}">
+                <td th:text="${product.category.name}"></td>
+                <td th:text="${product.name}"></td>
+                <td th:text="${product.description}"></td>
+                <td>
+                    <div>
+                        <a class="btn btn-outline-primary btn-sm" th:href="${'/product/' + product.id}">Edit</a>
+                        <a class="btn btn-outline-danger btn-sm" th:href="${'/product/' + product.id + '/delete'}">Delete</a>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <a class="btn btn-outline-success" th:href="${'/product/new'}">Create New Product</a>
+    </div>
+</main>
+
+<!-- Footer -->
+<div th:replace="fragments/footer :: footer "></div>
+
+<div th:replace="fragments/scripts"></div>
+</body>
+</html>

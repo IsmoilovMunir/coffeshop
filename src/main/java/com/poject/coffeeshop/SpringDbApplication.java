@@ -10,22 +10,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.List;
 
 @SpringBootApplication
-public class SpringDbApplication implements CommandLineRunner {
+public class SpringDbApplication {
 
-    @Autowired
-    private ProductRepository repository;
 
     public static void main(String[] args) {
         SpringApplication.run(SpringDbApplication.class, args);
+
+
     }
-    @Override
-    public void run(String... args) throws Exception{
-//        Product product = new Product(null, "name");
-//        repository.save(product);
-//        List<Product> all = repository.findAll();
-//        System.out.println(all);
-    }
-
-
-
 }
