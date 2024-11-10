@@ -11,13 +11,13 @@ CREATE TABLE if not exists category
 (
     id   BIGSERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL
-);
+    );
 
 CREATE TABLE if not exists unit
 (
     id   BIGSERIAL PRIMARY KEY,
     name VARCHAR(50) NOT NULL
-);
+    );
 
 CREATE TABLE if not exists product
 (
@@ -25,7 +25,7 @@ CREATE TABLE if not exists product
     category_id bigint references category (id) on delete cascade,
     name        VARCHAR(255) NOT NULL,
     description TEXT
-);
+    );
 
 CREATE TABLE menu_item
 (
@@ -42,7 +42,7 @@ CREATE TABLE if not exists role
 (
     id   BIGSERIAL    NOT NULL PRIMARY KEY,
     name varchar(255) NOT NULL
-);
+    );
 
 CREATE TABLE if not exists users
 (
@@ -55,7 +55,7 @@ CREATE TABLE if not exists users
     email        varchar(255) NOT NULL,
     phone_number varchar(255) not null,
     UNIQUE (username)
-);
+    );
 
 create table if not exists client
 (
@@ -64,12 +64,13 @@ create table if not exists client
     name               varchar(255),
     birthday           date,
     email              varchar(255),
-    registration_state varchar(255)
-);
+    phone              varchar(50) unique,
+    registration_state varchar(255) CHECK (registration_state IN ('INIT', 'ASK_NAME', 'ASK_EMAIL', 'ASK_PHONE', 'ASK_BIRTHDATE', 'REGISTERED'))
+    );
 
 create table if not exists client_bonus_card (
-     id                 bigserial not null primary key,
-     client_id          bigint unique references client(id) on delete cascade,
-     amount             int not null default 0,
-     discount_percent   int not null default 5
-);
+                                                 id                 bigserial not null primary key,
+                                                 client_id          bigint unique references client(id) on delete cascade,
+    amount             int not null default 0,
+    discount_percent   int not null default 5
+    );

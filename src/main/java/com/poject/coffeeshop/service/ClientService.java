@@ -2,7 +2,7 @@ package com.poject.coffeeshop.service;
 
 import com.poject.coffeeshop.entity.Client;
 import com.poject.coffeeshop.entity.ClientBonusCard;
-import com.poject.coffeeshop.enums.RegistrationState;
+import com.poject.coffeeshop.service.enums.RegistrationState;
 import com.poject.coffeeshop.repository.ClientRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

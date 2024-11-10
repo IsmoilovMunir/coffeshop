@@ -1,4 +1,4 @@
-package com.poject.coffeeshop.hendler.registration;
+package com.poject.coffeeshop.service.hendler.registration;
 
 import com.poject.coffeeshop.entity.Client;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;

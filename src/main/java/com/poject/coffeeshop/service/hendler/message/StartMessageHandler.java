@@ -1,6 +1,6 @@
-package com.poject.coffeeshop.hendler.message;
+package com.poject.coffeeshop.service.hendler.message;
 
-import com.poject.coffeeshop.utils.KeyboardUtils;
+import com.poject.coffeeshop.service.utils.KeyboardUtils;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 @Service

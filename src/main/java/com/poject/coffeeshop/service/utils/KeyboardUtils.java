@@ -1,4 +1,4 @@
-package com.poject.coffeeshop.utils;
+package com.poject.coffeeshop.service.utils;
 
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;

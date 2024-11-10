@@ -1,7 +1,7 @@
-package com.poject.coffeeshop.hendler.registration;
+package com.poject.coffeeshop.service.hendler.registration;
 
 import com.poject.coffeeshop.entity.Client;
-import com.poject.coffeeshop.enums.RegistrationState;
+import com.poject.coffeeshop.service.enums.RegistrationState;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 
@@ -17,11 +17,13 @@ public class ClientRegistrationHandler {
     public ClientRegistrationHandler(InitRegistrationHandler initRegistrationHandler,
                                      AskNameRegistrationHandler askNameRegistrationHandler,
                                      AskBirthDateRegistrationHandler askBirthDateRegistrationHandler,
+                                     AskPhoneRegistrationHandler askPhoneRegistrationHandler,
                                      AskEmailRegistrationHandler askEmailRegistrationHandler) {
 
         registrationHandlers.put(RegistrationState.INIT, initRegistrationHandler);
         registrationHandlers.put(RegistrationState.ASK_NAME, askNameRegistrationHandler);
         registrationHandlers.put(RegistrationState.ASK_BIRTHDATE, askBirthDateRegistrationHandler);
+        registrationHandlers.put(RegistrationState.ASK_PHONE, askPhoneRegistrationHandler);
         registrationHandlers.put(RegistrationState.ASK_EMAIL, askEmailRegistrationHandler);
     }
 

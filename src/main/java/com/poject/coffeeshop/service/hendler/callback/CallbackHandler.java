@@ -1,4 +1,4 @@
-package com.poject.coffeeshop.hendler.callback;
+package com.poject.coffeeshop.service.hendler.callback;
 
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;

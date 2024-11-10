@@ -4,24 +4,28 @@ volumes:
   pg_coffeshop:
 
 services:
-  coffeshop_db:
-    image: postgres
-    restart: always
-    environment:
-      - POSTGRES_USER=user
-      - POSTGRES_PASSWORD=pass
-      - POSTGRES_DB=coffeshop_db
-    volumes:
-      - pg_coffeshop:/var/lib/postgresql/date
-    ports:
-      - "127.0.0.1:5432:5432"
   app:
     restart: always
     build: .
     ports:
-      - "8080:8080"
+      - "127.0.0.1:8080:8080"
     depends_on:
-      - coffeshop_db
+      - coffee_demo_db
     environment:
-      SPRING_DATASOURCE_URL: 'jdbc:postgresql://coffee_house_db:5432/coffee_house_db'
-      JAVA_OPTS: '-Xmx512'
+      DB_URL: ${DB_URL}
+      DB_USER: ${DB_USER}
+      DB_PASS: ${DB_PASS}
+      TG_TOKEN: ${TG_TOKEN}
+      JAVA_OPTS: '-Xmx512m'
+
+  coffee_demo_db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASS}
+      POSTGRES_DB: coffeshop_db
+    volumes:
+      - pg_coffeshop:/var/lib/postgresql/date
+    ports:
+      - "127.0.0.1:5432:5432"

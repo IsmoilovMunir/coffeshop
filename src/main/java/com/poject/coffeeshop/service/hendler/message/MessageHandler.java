@@ -1,4 +1,4 @@
-package com.poject.coffeeshop.hendler.message;
+package com.poject.coffeeshop.service.hendler.message;
 
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 

@@ -1,4 +1,4 @@
-package com.poject.coffeeshop.enums;
+package com.poject.coffeeshop.service.enums;
 
 import java.util.Arrays;
 

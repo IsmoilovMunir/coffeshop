@@ -16,6 +16,7 @@ public class Client {
     private String name;
     private LocalDate birthday;
     private String email;
+    private String phone;
     private String registrationState;
 
     public Client() {
@@ -25,12 +26,13 @@ public class Client {
         this.registrationState = registrationState;
     }
 
-    public Client(Long id, Long chatId, String name, LocalDate birthday, String email, String registrationState) {
+    public Client(Long id, Long chatId, String name, LocalDate birthday, String email, String phone, String registrationState) {
         Id = id;
         this.chatId = chatId;
         this.name = name;
         this.birthday = birthday;
         this.email = email;
+        this.phone = phone;
         this.registrationState = registrationState;
     }
 
@@ -72,6 +74,14 @@ public class Client {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getRegistrationState() {
