@@ -1,31 +1,31 @@
 version: '3.1'
 
 volumes:
-  pg_coffeshop:
+  pg_coffeshop:  # Том для хранения данных PostgreSQL
 
 services:
   app:
     restart: always
-    build: .
+    build: .  # Сборка образа из Dockerfile в текущей директории
     ports:
-      - "127.0.0.1:8080:8080"
+      - "127.0.0.1:8080:8080"  # Проброс порта 8080 на localhost
     depends_on:
-      - coffee_demo_db
+      - coffee_demo_db  # Зависимость от сервиса базы данных
     environment:
-      DB_URL: ${DB_URL}
+      DB_URL: ${DB_URL}  # Используем переменные окружения
       DB_USER: ${DB_USER}
       DB_PASS: ${DB_PASS}
       TG_TOKEN: ${TG_TOKEN}
-      JAVA_OPTS: '-Xmx512m'
+      JAVA_OPTS: '-Xmx512m'  # Опции JVM
 
   coffee_demo_db:
-    image: postgres
+    image: postgres  # Используем официальный образ PostgreSQL
     restart: always
     environment:
-      POSTGRES_USER: ${DB_USER}
-      POSTGRES_PASSWORD: ${DB_PASS}
-      POSTGRES_DB: coffeshop_db
+      POSTGRES_USER: ${DB_USER}  # Пользователь БД
+      POSTGRES_PASSWORD: ${DB_PASS}  # Пароль пользователя
+      POSTGRES_DB: coffeshop_db  # Имя базы данных
     volumes:
-      - pg_coffeshop:/var/lib/postgresql/date
+      - pg_coffeshop:/var/lib/postgresql/data  # Том для хранения данных PostgreSQL
     ports:
       - "127.0.0.1:5432:5432"
